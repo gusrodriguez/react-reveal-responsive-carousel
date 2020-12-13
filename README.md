@@ -1,7 +1,7 @@
-# React Reveal Resizable Carousel
+# React Reveal Responsive Carousel
 
 ## What's this?
-:movie_camera: It's a an animated and rezisable carousel based on React-Reveal. It allows render any component as a slide.
+:movie_camera: It's a an animated and responsive carousel based on React-Reveal. It allows render any component as a slide.
 
 ## Features
 - Animation on enter the viewport.
