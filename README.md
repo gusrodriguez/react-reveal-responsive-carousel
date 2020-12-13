@@ -63,6 +63,15 @@ return (
 - The arrows component are expected to be SVG react components, but they can be any component. The arrows can be wrapped on a parent component for styling and positioning.
 - The carousel component can be wrapped in a container, and it will automatically adapt to the size of the container.
 
+### Peer dependencies
+The component has the following peer dependencies, that need to be installed by the consumer app.
+```
+  "react": "^16.14.0",
+  "react-dom": "^16.14.0",
+  "react-reveal": "^1.2.2", 
+  "styled-components": "^4.4.0"
+```
+
 ### Pending features
 - The carousel should provide default arrows if they are not sent as props.
 
