@@ -76,4 +76,4 @@ The component has the following peer dependencies, that need to be installed by 
 - The carousel should provide default arrows if they are not sent as props.
 
 ### Example
-[This application](https://mockflix.netlify.app/search) shows an example of the implementation of the component.
+[This application](https://mockflix.netlify.app/search) shows a working example of an implementation of the component.
