@@ -1,11 +1,15 @@
 module.exports = {
   moduleFileExtensions: ['js'],
   transform: {
-    '^.+\\.(js|jsx)?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  moduleNameMapper: {
-    // eslint-disable-next-line quotes
-    "\\.(css|less|sass|scss)$": "<rootDir>/mocks/styleMock.js",
+  globals: {
+    'ts-jest': {
+      tsConfigFile: '<rootDir>/tsconfig.jest.json',
+    },
   },
+  setupFiles: [
+    '<rootDir>/jest.setup.ts',
+  ],
 };

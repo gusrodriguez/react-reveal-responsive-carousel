@@ -8,7 +8,10 @@ import {
   StyledCarouselContainer,
   StyledPage,
 } from './components/carousel/styled';
-import { DEFAULT_CARD_WIDTH, DEFAULT_CARD_SEPARATION } from './components/carousel/constants';
+import {
+  DEFAULT_CARD_WIDTH,
+  DEFAULT_CARD_SEPARATION,
+} from './components/carousel/constants';
 
 type CarouselProps = {
   source: Array<JSX.Element>,
