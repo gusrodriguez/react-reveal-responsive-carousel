@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "resolveJsonModule": true,
+    "noEmit": false,
+    "module": "commonjs",
+    "lib": [
+      "es2018",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "inlineSources": true,
+    "baseUrl": ".",
+    "rootDirs": [
+      "src",
+      "test"
+    ],
+    "skipLibCheck": true,
+    "declaration": false,
+  }
+}
