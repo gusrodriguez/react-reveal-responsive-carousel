@@ -1,4 +1,6 @@
 # React Reveal Responsive Carousel
+![npm](https://img.shields.io/npm/v/react-reveal-responsive-carousel)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-reveal-responsive-carousel?color=r)
 
 :movie_camera: An animated and responsive carousel based on React-Reveal. It allows render any component as a slide.
 
