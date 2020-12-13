@@ -1,19 +1,18 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, './build');
+const BUILD_DIR = path.resolve(__dirname, './lib');
 const APP_DIR = path.resolve(__dirname, './');
 
 const config = {
-  entry: ['core-js/stable/promise', `${APP_DIR}/src/index.tsx`],
-  mode: 'poduction',
+  entry: ['core-js/stable/promise', `${APP_DIR}/src/components/carousel/index.tsx`],
+  mode: 'production',
 
-  // Where to output the js bundle
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js',
-    sourceMapFilename: 'bundle.js.map',
+    filename: 'index.js',
     publicPath: '/',
+    libraryTarget: "commonjs2",
   },
   module: {
     rules: [
@@ -40,14 +39,13 @@ const config = {
     ],
   },
   watch: false,
-  devtool: 'source-map',
-  devServer: {
-    port: 3000,
-    historyApiFallback: true,
-  },
   resolve: {
     extensions: ['.js', '.jsx','.tsx', '.ts'],
   },
+  externals: {
+    react: "react",
+    "react-dom": "react-dom",
+  }
 };
 
 module.exports = config;

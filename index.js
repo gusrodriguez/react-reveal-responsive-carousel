@@ -1,3 +1,3 @@
-    import Carousel from './build/bundle';
+    import Carousel from './lib/index';
 
     export default Carousel;
