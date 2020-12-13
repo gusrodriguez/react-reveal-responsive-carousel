@@ -6,13 +6,11 @@ const APP_DIR = path.resolve(__dirname, './');
 
 const config = {
   entry: ['core-js/stable/promise', `${APP_DIR}/src/index.tsx`],
-  mode: 'development',
+  mode: 'production',
 
-  // Where to output the js bundle
   output: {
     path: BUILD_DIR,
     filename: 'index.js',
-    sourceMapFilename: 'index.js.map',
     publicPath: '/',
     libraryTarget: "commonjs2",
   },
@@ -41,14 +39,13 @@ const config = {
     ],
   },
   watch: false,
-  devtool: 'source-map',
-  devServer: {
-    port: 3000,
-    historyApiFallback: true,
-  },
   resolve: {
     extensions: ['.js', '.jsx','.tsx', '.ts'],
   },
+  externals: {
+    react: "react",
+    "react-dom": "react-dom",
+  }
 };
 
 module.exports = config;

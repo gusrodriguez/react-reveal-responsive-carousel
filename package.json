@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "build": "webpack",
+    "build": "webpack -p",
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
