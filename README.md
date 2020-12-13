@@ -23,33 +23,33 @@ npm install react-reveal-responsive-carousel --save
 ### Usage
 
 ```js
-import Carousel from react-reveal-responsive-carousel
+import Carousel from 'react-reveal-responsive-carousel'
 
 const slides = [
-    <div>Text 1</div>,
-    <div>Text 2</div>,
-    <div>Text 3</div>
+  <div>Text 1</div>,
+  <div>Text 2</div>,
+  <div>Text 3</div>
 ];
 
 const leftArrow = (
-    <div>
-        <LeftArrow fillColor="#000" />
-    </div>
+  <div>
+    <LeftArrow fillColor="#000" />
+  </div>
 );
 const rightArrow = (
-    <div>
-        <RightArrow fillColor="#000" />
-    </div>
+  <div>
+    <RightArrow fillColor="#000" />
+  </div>
 );
 
 return (
-    <div>
-        <Carousel
-            source={slides}
-            leftArrow={leftArrow}
-            rightArrow={rightArrow}
-        ></Carousel>
-    </div>
+<div>
+  <Carousel
+    source={slides}
+    leftArrow={leftArrow}
+    rightArrow={rightArrow}
+  />
+</div>
 )
 ```
 
@@ -68,4 +68,4 @@ return (
 - The carousel should provide default arrows if they are not sent as props.
 
 ### Example
-Take a look at (this application)[https://mockflix.netlify.app/search] that implement this component:
+[This application](https://mockflix.netlify.app/search) shows an example of the implementation of the component.
