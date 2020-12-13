@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement, memo } from 'react';
+import React, { useState, useEffect, ReactElement } from 'react';
 import Slide from 'react-reveal/Slide';
 import makeCarousel from 'react-reveal/makeCarousel';
 import debounce from 'lodash.debounce';
@@ -97,4 +97,4 @@ function Carousel(props: CarouselProps) {
   );
 }
 
-export default memo(Carousel);
+export default Carousel;

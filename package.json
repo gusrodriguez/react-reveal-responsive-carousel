@@ -1,15 +1,16 @@
 {
-  "name": "react-reveal-resizable-carousel",
-  "version": "1.0.0",
+  "name": "react-reveal-responsive-carousel",
+  "version": "1.0.1-beta.4",
   "description": "An animated and responsive carousel based on react-reveal",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "build": "webpack -p",
+    "build": "webpack",
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "npm test -- --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "publish:npm": "webpack -p"
   },
   "author": "Gustavo Rodriguez",
   "license": "ISC",
@@ -17,11 +18,7 @@
     "@babel/plugin-transform-runtime": "^7.10.4",
     "lodash.chunk": "^4.2.0",
     "lodash.debounce": "^4.0.8",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-reveal": "^1.2.2",
-    "shortid": "^2.2.16",
-    "styled-components": "^4.4.0"
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -48,11 +45,19 @@
     "eslint-plugin-react": "7.5.1",
     "file-loader": "^6.0.0",
     "jest": "^26.0.0",
+    "styled-components": "4.4.0",
     "ts-jest": "^26.1.4",
     "ts-loader": "^8.0.1",
     "typescript": "^3.9.3",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-reveal": "^1.2.2",
+    "styled-components": "^4.4.0"
+  },
+  "repository": "https://github.com/gusrodriguez/react-reveal-resizable-carousel"
 }
