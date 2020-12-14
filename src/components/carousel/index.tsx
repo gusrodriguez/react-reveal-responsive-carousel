@@ -28,12 +28,14 @@ type CarouselUIProps = {
 }
 
 class Carousel extends React.Component<CarouselProps> {
+  numberOfCards: number
   constructor(props: CarouselProps) {
     super(props);
     this.state = {
       width: 0,
       height: 0,
     };
+    this.numberOfCards = 0;
   }
 
   updateWidthAndHeight = (e: UIEvent) => {
@@ -60,28 +62,28 @@ class Carousel extends React.Component<CarouselProps> {
       cardWidth,
       cardSeparation,
     } = this.props as CarouselProps;
-  
+
     // Calculate how many slides will fit per page depending on the viewport width
     const innerCardWith = cardWidth || DEFAULT_CARD_WIDTH;
     const innerCardSeparation = cardSeparation || DEFAULT_CARD_SEPARATION;
     //@ts-ignore
     const availableWidth = this.state.width - innerCardSeparation;
-    const cardsNumber = Math.floor(availableWidth / innerCardWith);
-  
+    this.numberOfCards = Math.floor(availableWidth / innerCardWith);
+
     let slides: Array<JSX.Element> = [];
-  
+
     if (source && source.length) {
-      const pages = chunk(source, cardsNumber);
-  
+      const pages = chunk(source, this.numberOfCards);
+
       // Balance the last page with placeholders
       const lastPage = pages[pages.length - 1];
-      if (lastPage && (lastPage.length < cardsNumber)) {
-        const gap = cardsNumber - lastPage.length;
+      if (lastPage && (lastPage.length < this.numberOfCards)) {
+        const gap = this.numberOfCards - lastPage.length;
         for (let i = 0; i < gap; i++) {
-          lastPage.push(<div key={`card_${shortid.generate()}`} />)
+          lastPage.push(<div key={shortid.generate()} />)
         }
       }
-  
+
       // Map the pages to slides components
       slides = pages.map(page => (
         <Slide key={shortid.generate()} right>
@@ -91,18 +93,19 @@ class Carousel extends React.Component<CarouselProps> {
         </Slide>
       ));
     }
-  
+
     const CarouselUI = ({ position, handleClick, children }: CarouselUIProps) => {
       return (
-      <StyledCarouselContainer width={cardsNumber * innerCardWith}>
-        {children}
-        {React.cloneElement(leftArrow, { onClick:handleClick, 'data-position': position - 1 })}
-        {React.cloneElement(rightArrow, { onClick:handleClick, 'data-position': position + 1 })}
-      </StyledCarouselContainer>
-    )};
-  
+        <StyledCarouselContainer width={this.numberOfCards * innerCardWith}>
+          {children}
+          {React.cloneElement(leftArrow, { onClick: handleClick, 'data-position': position - 1 })}
+          {React.cloneElement(rightArrow, { onClick: handleClick, 'data-position': position + 1 })}
+        </StyledCarouselContainer>
+      )
+    };
+
     const Carousel = makeCarousel(CarouselUI);
-  
+
     return (
       <Carousel defaultWait={0}>
         {slides}

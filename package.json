@@ -7,7 +7,7 @@
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
     "build": "webpack -p",
-    "test": "jest --config jest.config.js --coverage",
+    "test": "jest __tests__ --watch",
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
     "publish:npm": "webpack -p"
